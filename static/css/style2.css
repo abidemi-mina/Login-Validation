@@ -1,0 +1,30 @@
+
+footer{
+    background-color: blueviolet;
+    height: 300px;
+}
+.col{
+    background-color: blueviolet;
+    width: 30%;            
+    border-radius: 25px;
+    margin: 1%;
+}
+footer,#footlist{
+    list-style: none;
+
+}
+#footer{
+    display: flex;
+    padding: 20px;
+    justify-content:space-evenly;
+    height: 200px;
+}
+footer{
+    background-color: blueviolet;
+    height: 300px;
+}
+
+p{
+    text-align: center;
+    }
+
