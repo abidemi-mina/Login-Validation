@@ -60,7 +60,7 @@ EMAIL_HOST_USER = 'aminatabidemi212@gmail.com'
 EMAIL_HOST_PASSWORD = config('EMAIL_PASSWORD')
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-FROM_HOST = 'From Adebowale aminat<aminatabidemi212@gmail.com>'
+FROM_HOST = 'Adebowale aminat<aminatabidemi212@gmail.com>'
 ROOT_URLCONF = 'login_valiadation.urls'
 
 TEMPLATES = [
