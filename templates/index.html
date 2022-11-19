@@ -3,10 +3,10 @@
 {% block title %}
 HOME PAGE
 {% endblock %}
-
-
+{% block link %}
+		<link rel="stylesheet" href="{% static 'css/style2.css' %}"/>
+{% endblock %}
 {% block content %}
-
 <body>
     {% include 'header.html' %}
 <main>
@@ -21,6 +21,20 @@ HOME PAGE
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem quibusdam deserunt earum perferendis eligendi possimus dolor, quis maiores, aspernatur adipisci quas, laborum porro! Autem in officiis laborum eum cum aspernatur.
         </blockquote>
     </div>
+    <section>
+        <div>
+            <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem velit officiis repudiandae perspiciatis? Modi architecto velit dolorem illo quibusdam totam tenetur asperiores temporibus, sed maiores earum qui autem, quae laboriosam!
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem velit officiis repudiandae perspiciatis? Modi architecto velit dolorem illo quibusdam totam tenetur asperiores temporibus, sed maiores earum qui autem, quae laboriosam!
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem velit officiis repudiandae perspiciatis? Modi architecto velit dolorem illo quibusdam totam tenetur asperiores temporibus, sed maiores earum qui autem, quae laboriosam!
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem velit officiis repudiandae perspiciatis? Modi architecto velit dolorem illo quibusdam totam tenetur asperiores temporibus, sed maiores earum qui autem, quae laboriosam!
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem velit officiis repudiandae perspiciatis? Modi architecto velit dolorem illo quibusdam totam tenetur asperiores temporibus, sed maiores earum qui autem, quae laboriosam!
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem velit officiis repudiandae perspiciatis? Modi architecto velit dolorem illo quibusdam totam tenetur asperiores temporibus, sed maiores earum qui autem, quae laboriosam!
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem velit officiis repudiandae perspiciatis? Modi architecto velit dolorem illo quibusdam totam tenetur asperiores temporibus, sed maiores earum qui autem, quae laboriosam!
+
+            </p>
+        </div>
+    </section>
 </main>
     
 <footer id="siteFooter">
@@ -36,13 +50,12 @@ HOME PAGE
             Lorem ipsum dolor sit amet consectetur adipisicing elit.Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio voluptatem laborum officiis veniam eum ab tempore distinctio earum.
         </div>
         <ul  id="footlist">
-            <li> <a href="#"> Home</a> </li>
-            <li> <a href="#">About</a> </li>
-            <li> <a href="#">Blog</a> </li>
-            <li> <a href="#">Contact</a> </li>
+            <li><a href="{% url 'home'%}">Home</a></li>
+            <li><a href="{% url 'login'%}">Login</a></li>
+            <li><a href="{% url 'register'%}">Sign Up</a></li>
         </ul>
         
     </div>
-    <p> copyright @ 2022 Abidemi Aminat Adebowale</p>
+    <p><a href="http://minaportfolio.pythonanywhere.com/">copyright @ 2022 Abidemi Aminat Adebowale</a> </p>
 </footer>  
 {% endblock %}

@@ -6,10 +6,10 @@ from django.contrib.auth.forms import UserCreationForm
 
 
 class RegisterForm(UserCreationForm):
-    username = forms.CharField(widget=forms.TextInput(attrs={'id':'full_name'}))
-    password1 = forms.CharField(label='Password', widget=forms.PasswordInput(attrs={'id':'password'}))
-    password2 = forms.CharField(label='Confirm Password', widget=forms.PasswordInput(attrs={'id':'confirm_password'}))
-    email = forms.CharField(widget=forms.EmailInput(attrs={'id':'your_email'}))
+    username = forms.CharField(widget=forms.TextInput())
+    password1 = forms.CharField(label='Password', widget=forms.PasswordInput())
+    password2 = forms.CharField(label='Confirm Password', widget=forms.PasswordInput())
+    email = forms.EmailField(widget=forms.EmailInput(attrs={'placeholder':'enter a valid email'}))
 
     class Meta():
         model = User
@@ -21,13 +21,20 @@ class RegisterForm(UserCreationForm):
             raise forms.ValidationError('Email already exist')
         return email_field
 
+    def clean_username(self):
+        name_field = self.cleaned_data.get('username')
+        if User.objects.filter(username=name_field).exists():
+            raise forms.ValidationError('Name already exist')
+        return name_field
+    
+
 
     def save(self, commit=True):
         user = super().save(commit=False)
         user.username = self.cleaned_data['username']
-        user.first_name = self.cleaned_data['first_name']
-        user.last_name = self.cleaned_data['last_name']
         user.email = self.cleaned_data['email']
+        user.password1 = self.cleaned_data['password1']
+        user.password2 = self.cleaned_data['password2']
 
         if commit:
             user.save()

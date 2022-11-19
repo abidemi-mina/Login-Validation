@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 from pathlib import Path
 import os
+from decouple import config
 from re import TEMPLATE
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -41,6 +42,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'Regg',
+    'decouple',
+    'six',
 ]
 
 MIDDLEWARE = [
@@ -52,7 +55,12 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'aminatabidemi212@gmail.com'
+EMAIL_HOST_PASSWORD = config('EMAIL_PASSWORD')
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+FROM_HOST = 'From Adebowale aminat<aminatabidemi212@gmail.com>'
 ROOT_URLCONF = 'login_valiadation.urls'
 
 TEMPLATES = [
